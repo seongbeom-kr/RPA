@@ -138,12 +138,13 @@
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
                   </ActivityAction.Argument>
-                  <Sequence sap:VirtualizedContainerService.HintSize="506,1447" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                  <Sequence sap:VirtualizedContainerService.HintSize="506,1579" sap2010:WorkflowViewState.IdRef="Sequence_21">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="444,92" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;NEW BRANCH&quot;]" />
                     <ueab:ReadRangeX DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="444,169" sap2010:WorkflowViewState.IdRef="ReadRangeX_3" Range="[Excel.Sheet(&quot;Sheet1&quot;)]" SaveTo="[dtBookList]" />
                     <ui:FilterDataTable sap2010:Annotation.AnnotationText="1-2. 도서 정보에서 예스24 판매 도서만 남기기" DataTable="[dtBookList]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="444,192" sap2010:WorkflowViewState.IdRef="FilterDataTable_4" OutputDataTable="[dtBookList]" SelectColumnsMode="Remove">
                       <ui:FilterDataTable.Filters>
