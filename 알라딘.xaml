@@ -1,0 +1,328 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="예스24" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_dtBookList" Type="OutArgument(sd:DataTable)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>688,1898</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>예스24_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.Excel.Model</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="알라딘" sap:VirtualizedContainerService.HintSize="698,1833" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="dtBookList" />
+      <Variable x:TypeArguments="x:String" Name="strSalePoint" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="636,1722" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
+      <ueab:ExcelProcessScopeX.Body>
+        <ActivityAction x:TypeArguments="ui:IExcelProcess">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="602,1635" sap2010:WorkflowViewState.IdRef="Sequence_10">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="540,1524" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="도서목록.xlsx">
+              <ueab:ExcelApplicationCard.Body>
+                <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="506,1255" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ueab:ReadRangeX DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="444,169" sap2010:WorkflowViewState.IdRef="ReadRangeX_1" Range="[Excel.Sheet(&quot;Sheet1&quot;)]" SaveTo="[dtBookList]" />
+                    <ui:FilterDataTable sap2010:Annotation.AnnotationText="2-2. 도서 정보에서 알라딘 판매 도서만 남기기" DataTable="[dtBookList]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="444,192" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[dtBookList]" SelectColumnsMode="Remove">
+                      <ui:FilterDataTable.Filters>
+                        <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                          <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                            <ui:FilterOperationArgument.Column>
+                              <InArgument x:TypeArguments="x:String">["서점"]</InArgument>
+                            </ui:FilterOperationArgument.Column>
+                            <ui:FilterOperationArgument.Operand>
+                              <InArgument x:TypeArguments="x:String">["알라딘"]</InArgument>
+                            </ui:FilterOperationArgument.Operand>
+                          </ui:FilterOperationArgument>
+                        </scg:List>
+                      </ui:FilterDataTable.Filters>
+                      <ui:FilterDataTable.SelectColumns>
+                        <scg:List x:TypeArguments="InArgument" Capacity="4">
+                          <x:Null />
+                        </scg:List>
+                      </ui:FilterDataTable.SelectColumns>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:FilterDataTable>
+                    <ui:AddDataColumn x:TypeArguments="x:Int32" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" sap2010:Annotation.AnnotationText="2-3. 도서 정보에 판매지수 열 추가하기" ColumnName="판매지수" DataTable="[dtBookList]" DefaultValue="0" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="444,217" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_3">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:AddDataColumn>
+                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="2-4. 알라딘 검색 페이지에 반복 접속하기" DataTable="[dtBookList]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="444,94" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                      <ui:ForEachRow.Body>
+                        <ActivityAction x:TypeArguments="sd:DataRow">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                          </ActivityAction.Argument>
+                          <Sequence sap2010:Annotation.AnnotationText="" DisplayName="본문" sap:VirtualizedContainerService.HintSize="646.6666666666666,1624" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NApplicationCard sap2010:Annotation.AnnotationText="모던으로 변경 &#xA;open browser &gt; use browser" AttachMode="ByInstance" DisplayName="Use Browser Chrome: 알라딘" sap:VirtualizedContainerService.HintSize="584.6666666666666,1513.3333333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="c7a0f31d-0f0e-42bf-a6b1-9eadbe01e84a" Version="V2">
+                              <uix:NApplicationCard.Body>
+                                <ActivityAction x:TypeArguments="x:Object">
+                                  <ActivityAction.Argument>
+                                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                                  </ActivityAction.Argument>
+                                  <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="550.6666666666666,1248.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <TryCatch sap2010:Annotation.AnnotationText="" DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="488.6666666666667,576.6666666666666" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <TryCatch.Try>
+                                        <Sequence sap:VirtualizedContainerService.HintSize="450,337.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <uix:NGetText sap2010:Annotation.AnnotationText="2-5. 검색한 도서의 판매지수(세일즈포인트) 추출하기(변수명은 예스24와 동일하게 사용함)&#xA;2-6. 판매지수가 없는 도서를 예외 처리하기 " DisplayName="Get Text '6,930'" sap:VirtualizedContainerService.HintSize="388,221.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="c7a0f31d-0f0e-42bf-a6b1-9eadbe01e84a" TextString="[strSalePoint]" Version="V3">
+                                            <uix:NGetText.Target>
+                                              <uix:TargetAnchorable BrowserURL="https://www.aladin.co.kr/search/wsearchresult.aspx?SearchTarget=All&amp;SearchWord=9791140703562&amp;x=0&amp;y=0" CvType="AnyWordGroup" DesignTimeRectangle="1464, 1190, 53, 24" DesignTimeScaleFactor="1.5" FriendlyName="'6,930'" FullSelectorArgument="&lt;webctrl tableCol='7' tableRow='1' tag='TABLE' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;div&amp;gt;ul&amp;gt;li&amp;gt;b' isleaf='1' tableRow='1' tag='B' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' isleaf='1' class='' tag='B' /&gt;" Guid="8691d349-93c6-4f85-ac63-131fc5c1acfb" InformativeScreenshot="e9f53aa7a9f2108a40daeb9ed4019bfd.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='알라딘: 검색결과 &amp;apos;9791140703562&amp;apos;' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                                                <uix:TargetAnchorable.Anchors>
+                                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                    <uix:Target DesignTimeRectangle="1212, 1196, 90, 18" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl tableCol='7' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='IMG' class='' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAF4AAAAWCAYAAABJ2StvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAQZSURBVGhD7Zjra5tVHMf9X6r4QoedIIrzxlTUIWOwtUVXL1NZmRvtRl03JhMEBRkiTooyNhc2Y11nXXahSZt1zVqztkmaJmna5tbcr0+yJmlzv379PfFZky1tWt/YN+cbDg88Oedz4Hs4v8vzGJi2RMz4LdKmjE/lOHArWriWpIimTMLb/y7GqWoTxpdxP2mEKSSG3nsWvtgYCqUMvS0J/29WjFOrhsbzi/OlFJ3kECYcpzBm64SZEyOR9aJUzgmzNhbj1Kuh8YVSGpHkLMxhEVTu41B5umEI/ABXVIZcMS7M2liMU6+HjC+VC8gXkxSzwljOOBFOaGGN/A5D8DtoAz2YCZ7ATOArGEM/IbgygVjaRqfrR7YQR7FUPWHGaczhtWp8Jr9EMBe4hA6emAKLEQnmQxcw7T9dgeq5EzCETxK8m971ELwXlvAVOOmaBZZVlFSsSOaCSOcjjLMeJxsQ3K4xfj4oxqTzWwybOjBqO4y/nZ2Y9B6FKtAFbegYdOFu6CNfYIY7Bk2wC1O+o1C6u3DXfgRycwcUNrpqrjMw+C9SvPuGcdbgTJC/D7RqvC92Dxr3Wdya249BUwtuL76PcfcBTPgPQhU8BE3oMKa5I1CHPsdUoANK76e44/gAMksrrhv3Ytx+GhbuL7ijCuL8yDhrcBZCVwS3a4wvUQzi4fwEmbkdw7ZWjLoI7v0QSv/HtAFtEvgE9+ip9H2Eu5523La3EbgNcsshmLg/K9eRTziMszYnSfX+A60aX6ZfmuK8f3kKY44eyKxtGFrcjRHnXijcLQRqrQyFp4U23Ae5fQ8GLbshtx6ALXIDcYp/fPLhSyzGWY+TF9yuMZ5XqVykjM1ReXQVCnsnJKadGLS+BZn9HQw5dlWGzL4L0sW3cdP8Boat7VB7zlDisKBQTAsUxtmIw+sh43nxXVc4MY8J19f4w/A8BhZ2QGJ+Gdctr1aGxPIKrpleQr/xBYzY+Cs0gEwhKqyuinEac+qM5+tUX1yFUftxiLRPQ6x/Bn2z29E39ywNehq3Q2xoxqWZbbi1sB86/69IUQx8VIzTmFNnfLawTDWqHFIqm36ZbMJ59eO4OP0ULusIbHiRgM04r3kC51RN6Ne/SyXS90jkQsLqqhinMafO+HQ+irlAP67NtqNX2YQL6mb06V6HZK4NUvNnGDDugUjzHG36JC5rdmLEcgorGZ+wuirGacypMz5J7bDa/TMG9O9BpH4Nd2xfUgd2A0uUIOLUJrtj45QwenFVv4/Ab+Km8SC1xi5hdVWM05izRqiJwxqRQue7RN3ab9QeT2KFWt1ymf/MWaZEEaskFxMngcZzjuaJKIbd/3dxjRinMafO+EIpS6dno5OtFvvrKZWLIJp2oEhrHhXjNObUGc/0/4gZvyUC/gFagtCzWT79zgAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                                                  </scg:List>
+                                                </uix:TargetAnchorable.Anchors>
+                                              </uix:TargetAnchorable>
+                                            </uix:NGetText.Target>
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                          </uix:NGetText>
+                                        </Sequence>
+                                      </TryCatch.Try>
+                                      <TryCatch.Catches>
+                                        <Catch x:TypeArguments="ui:SelectorNotFoundException" sap:VirtualizedContainerService.HintSize="454.6666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <ActivityAction x:TypeArguments="ui:SelectorNotFoundException">
+                                            <ActivityAction.Argument>
+                                              <DelegateInArgument x:TypeArguments="ui:SelectorNotFoundException" Name="exception" />
+                                            </ActivityAction.Argument>
+                                            <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_4">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:String">[strSalePoint]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:String" xml:space="preserve"> 판매지수 0</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                          </ActivityAction>
+                                        </Catch>
+                                      </TryCatch.Catches>
+                                    </TryCatch>
+                                    <Assign sap2010:Annotation.AnnotationText="2-7. 판매지수에서 숫자를 추출하여 저장하기" sap:VirtualizedContainerService.HintSize="488.6666666666667,116" sap2010:WorkflowViewState.IdRef="Assign_5">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:Object">[row("판매지수")]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:Object">[Convert.ToInt32(strSalePoint.Trim.Replace(",",""))]</InArgument>
+                                      </Assign.Value>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </Assign>
+                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="488.6666666666667,96" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[strSalePoint]" />
+                                    <uix:NKeyboardShortcuts ActivateBefore="True" sap2010:Annotation.AnnotationText="2-8. 열린 브라우저 닫기&#xA;#모던으로 변경&#xA;Send Hotkey &gt; Keyboard Shortcuts" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="438.6666666666667,224" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][d(alt)][k(f4)][u(alt)][u(hk)]" Version="V3">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </uix:NKeyboardShortcuts>
+                                  </Sequence>
+                                </ActivityAction>
+                              </uix:NApplicationCard.Body>
+                              <uix:NApplicationCard.TargetApp>
+                                <uix:TargetApp Area="-11, -11, 2582, 1550" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="603ad31b2997d4deeb7eb2e8dc5aabac.jpg" Selector="&lt;html app='chrome.exe' title='알라딘' /&gt;" Title="알라딘" Url="[&quot;https://www.aladin.co.kr/search/wsearchresult.aspx?SearchTarget=All&amp;SearchWord=&quot; + row(&quot;ISBN&quot;).ToString + &quot;&amp;x=24&amp;y=11&quot;]" />
+                              </uix:NApplicationCard.TargetApp>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NApplicationCard>
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:ForEachRow.Body>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:ForEachRow>
+                    <Assign sap2010:Annotation.AnnotationText="2-9. 판매지수를 인수(out_dtBookList, 출력 방향)에 저장하기" sap:VirtualizedContainerService.HintSize="444,113" sap2010:WorkflowViewState.IdRef="Assign_6">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="sd:DataTable">[out_dtBookList]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="sd:DataTable">[dtBookList]</InArgument>
+                      </Assign.Value>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Assign>
+                    <ueab:WriteRangeX Destination="[Excel.Sheet(&quot;알라딘테스트&quot;).Range(&quot;A1&quot;)]" DisplayName="Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="444,159" sap2010:WorkflowViewState.IdRef="WriteRangeX_1" IgnoreEmptySource="False" Source="[out_dtBookList]" />
+                  </Sequence>
+                </ActivityAction>
+              </ueab:ExcelApplicationCard.Body>
+            </ueab:ExcelApplicationCard>
+          </Sequence>
+        </ActivityAction>
+      </ueab:ExcelProcessScopeX.Body>
+    </ueab:ExcelProcessScopeX>
+  </Sequence>
+</Activity>
